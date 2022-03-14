@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexFormMobile", "FlexFormMobile\FlexFormMobile.csproj", "{B51E7EAC-7DE1-4FF0-B9A1-94CCE6C66515}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B51E7EAC-7DE1-4FF0-B9A1-94CCE6C66515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B51E7EAC-7DE1-4FF0-B9A1-94CCE6C66515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B51E7EAC-7DE1-4FF0-B9A1-94CCE6C66515}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B51E7EAC-7DE1-4FF0-B9A1-94CCE6C66515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B51E7EAC-7DE1-4FF0-B9A1-94CCE6C66515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B51E7EAC-7DE1-4FF0-B9A1-94CCE6C66515}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2FCC64A-AE36-4D39-9378-415EA22A33A2}
+	EndGlobalSection
+EndGlobal
