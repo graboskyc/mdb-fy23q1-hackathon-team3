@@ -1,0 +1,6 @@
+[
+    {
+        "name": "passwordReset",
+        "private": true
+    }
+]
