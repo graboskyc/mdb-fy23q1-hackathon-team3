@@ -9,7 +9,8 @@
         <Frame BackgroundColor="#00ed64" Padding="24" CornerRadius="0">
             <Label Text="MongoMD" HorizontalTextAlignment="Center" TextColor="#001e2b" FontSize="36"/>
         </Frame>
-        <Label Text="Please Login" FontSize="Title" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+        
+        <Label Text="Please Login" FontSize="Title" HorizontalTextAlignment="Center" />
 
         <Entry Placeholder="email" x:Name="txt_email"  />
         <Entry Placeholder="password" x:Name="txt_password" IsPassword="True" />

@@ -84,7 +84,7 @@ namespace FlexFormMobile
                 App.realm_realm = await Realm.GetInstanceAsync(App.realm_config);
 
                 Models.Response r = new Models.Response();
-                r.Answer = _q.Options.Split(',')[p.SelectedIndex];
+                r.Answer = _q.Options.Split(',')[p.SelectedIndex].Trim();
                 r.FormDefinitionId = _id;
 
 
