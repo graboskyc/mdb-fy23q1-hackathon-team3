@@ -24,6 +24,26 @@
         "analyzer": "lucene.english",
         "searchAnalyzer": "lucene.english",
         "type": "string"
+      },
+      "entities": {
+        "fields": {
+          "ANATOMY": {
+            "type": "stringFacet"
+          },
+          "MEDICAL_CONDITION": {
+            "type": "stringFacet"
+          },
+          "MEDICATION": {
+            "type": "stringFacet"
+          },
+          "TEST_TREATMENT_PROCEDURE": {
+            "type": "stringFacet"
+          },
+          "TREATMENT_NAME": {
+            "type": "stringFacet"
+          }
+        },
+        "type": "document"
       }
     }
   }
