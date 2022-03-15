@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Realms;
+using Realms.Sync;
 
 namespace FlexFormMobile
 {
@@ -18,12 +20,15 @@ namespace FlexFormMobile
             InitializeComponent();
         }
 
+
         private async void CameraButton_Clicked(object sender, EventArgs e)
         {
             await TakePhotoAsync();
         }
         async Task TakePhotoAsync()
         {
+            progressbar.IsVisible = true;
+            progressbar.Progress = .1;
             try
             {
                 var photo = await MediaPicker.CapturePhotoAsync();
@@ -53,6 +58,7 @@ namespace FlexFormMobile
                 //PhotoPath = null;
                 return;
             }
+            progressbar.Progress = .25;
             // save the file into local storage
             var newFile = Path.Combine(FileSystem.CacheDirectory, photo.FileName);
             using (var stream = await photo.OpenReadAsync())
@@ -65,6 +71,32 @@ namespace FlexFormMobile
             byte[] imageArray = System.IO.File.ReadAllBytes(newFile);
             string base64ImageRepresentation = Convert.ToBase64String(imageArray);
             txt_Encoded.Text = base64ImageRepresentation;
+
+            progressbar.Progress = .5;
+
+            try
+            {
+                App.realm_partition = App.realm_user.Id;
+                App.realm_config = new Realms.Sync.SyncConfiguration(App.realm_partition, App.realm_user);
+                App.realm_realm = await Realm.GetInstanceAsync(App.realm_config);
+
+                Models.EncodedPhoto ep = new Models.EncodedPhoto();
+                ep.EncodedPhotoText = base64ImageRepresentation;
+
+                App.realm_realm.Write(() =>
+                {
+                    App.realm_realm.Add(ep);
+                });
+
+                await App.realm_realm.GetSession().WaitForUploadAsync();
+                progressbar.Progress = 1.0;
+
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error Fetching Tickets", ex.Message, "OK");
+
+            }
 
         }
     }
