@@ -1,2 +1,5 @@
 FlexFormMobile/FlexFormMobile/obj
 FlexFormMobile/FlexFormMobile/bin
+.vscode/*
+.browserslistrc
+.editorconfig
