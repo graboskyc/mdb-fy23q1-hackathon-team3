@@ -2,11 +2,11 @@ import { ValueConverter } from "@angular/compiler/src/render3/view/template";
 
 export interface FormData {
 
-    id?: number;
+    _id?: number;
     title: string;
     author: string;
-    authorId: number;
-    fields: FieldDetails[];
+    authorId?: number;
+    section: FieldDetails[];
 }
 
 
@@ -16,10 +16,6 @@ export interface FieldDetails {
     displayText:string;
     type: string;
     default?: string;
-    options?: FieldOptions[]
+    options?: string[]
 }
 
-export interface FieldOptions {
-    key: string;
-    value: string;
-}

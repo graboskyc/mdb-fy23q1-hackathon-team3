@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <form class="d-flex" [formGroup]="searchForm" (ngSubmit)="search()">
+                        <input class="form-control me-2" type="search" placeholder="Form Search" aria-label="Search" formControlName="search">
+                        <button class="btn btn-outline-success" type="submit" (click)="search()">Search</button>
+                      </form>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Form Name</th>
+                                <th scope="col">Author</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let form of forms | async">
+                                <td>
+                                    <a [routerLink]= "['/form-detail']" [queryParams]="{id: form._id}">{{ form.title }}</a>
+                                </td>
+                                <td>{{ form.author }}</td>
+                            </tr>
+                        </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

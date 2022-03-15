@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { FormsService } from '../forms.service';
 import { FormData } from '../models/form-data.model';
@@ -11,20 +12,26 @@ import { FormData } from '../models/form-data.model';
 })
 export class FormDetailComponent implements OnInit {
 
-  formData!: FormData;
+  formData!: Promise<FormData>;
+  id: string;
 
-  constructor(private service: FormsService) { }
+  constructor(private service: FormsService, private activatedRoute: ActivatedRoute) {
+    
+   }
 
   
 
   ngOnInit(): void {
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.id = params['id'];
+    });
     this.getFormData();  
   }
 
 
   getFormData(): void {
-    this.formData = this.service.getFormDefinionTemp();
-    console.log(this.formData);
+    this.formData = this.service.getFormDefinition(this.id)
+    
   }
 
 
