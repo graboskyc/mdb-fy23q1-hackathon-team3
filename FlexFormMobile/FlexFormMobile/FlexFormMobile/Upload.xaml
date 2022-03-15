@@ -6,9 +6,16 @@
              IconImageSource="icon_upload.png">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Image x:Name="PhotoImage" />
+                <Label x:Name="txt_Encoded" />
+                <Button x:Name="CameraButton" Text="Take Photo" Grid.Row="1" Clicked="CameraButton_Clicked" />
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

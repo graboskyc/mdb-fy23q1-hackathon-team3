@@ -12,9 +12,11 @@ namespace FlexFormMobile
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Entry : ContentPage
     {
-        public Entry()
+        private MongoDB.Bson.ObjectId _id;
+        public Entry(MongoDB.Bson.ObjectId id)
         {
             InitializeComponent();
+            _id = id;
         }
     }
 }
