@@ -6,9 +6,22 @@
              IconImageSource="icon_search.png">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="txt_search" Placeholder="Search..." />
+            <Button Clicked="Button_Clicked" Text="Search" />
+
+            <ScrollView>
+                <ListView x:Name="lv" ItemSelected="lv_ItemSelected" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
+                                <Label Text="{Binding title}" FontSize="36"></Label>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

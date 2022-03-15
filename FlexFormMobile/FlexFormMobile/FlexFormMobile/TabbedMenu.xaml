@@ -10,6 +10,7 @@
     NavigationPage.HasNavigationBar="False">
 
     <local:MyForms />
+    <local:Search />
     <local:Upload />
     <local:Profile />
 
