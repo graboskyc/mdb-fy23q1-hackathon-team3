@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 import formdata from '../data/form-data-example.json';
+import { FormData } from './models/form-data.model';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ import formdata from '../data/form-data-example.json';
 })
 export class FormsService {
 
-FormData: any = formdata;
+formData: FormData = formdata;
 
   constructor(private http: HttpClient) { 
 
@@ -27,8 +28,8 @@ FormData: any = formdata;
     return this.http.get<any>(environment.formDataUrl);
   }
 
-  getFormDefinionTemp(): any {
-    return this.FormData;
+  getFormDefinionTemp(): FormData {
+    return this.formData;
   }
 
 }
