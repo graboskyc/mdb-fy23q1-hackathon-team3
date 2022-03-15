@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { FormsService } from '../forms.service';
 
 @Component({
   selector: 'app-form-detail',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormDetailComponent implements OnInit {
 
-  constructor() { }
+  formData!: Observable<any>;
+
+  constructor(private service: FormsService) { }
+
+  
 
   ngOnInit(): void {
+    this.getFormData();  
   }
+
+
+  getFormData(): void {
+    this.formData = this.service.getFormDefinionTemp();
+    console.log(this.formData);
+  }
+
 
 }

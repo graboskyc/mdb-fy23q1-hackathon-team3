@@ -7,9 +7,9 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   { path: 'form-detail', component: FormDetailComponent },
   { path: 'form-list', component: FormListComponent },
-  { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/form-detail', pathMatch: 'full'},
-  { path: '**', redirectTo: '/form-detail', pathMatch: 'full'}
+  { path: 'login', component: LoginComponent }
+  //{ path: '', redirectTo: '/form-list', pathMatch: 'full'},
+  //{ path: '**', redirectTo: '/form-list', pathMatch: 'full'}
 
 ];
 
