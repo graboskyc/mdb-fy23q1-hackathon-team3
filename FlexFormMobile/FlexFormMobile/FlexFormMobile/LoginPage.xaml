@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlexFormMobile.LoginPage"
+             NavigationPage.HasBackButton="False"
+             >
+
+    <StackLayout>
+        <Frame BackgroundColor="#00ed64" Padding="24" CornerRadius="0">
+            <Label Text="MongoMD" HorizontalTextAlignment="Center" TextColor="#001e2b" FontSize="36"/>
+        </Frame>
+        
+        <Label Text="Please Login" FontSize="Title" HorizontalTextAlignment="Center" />
+
+        <Entry Placeholder="email" x:Name="txt_email"  />
+        <Entry Placeholder="password" x:Name="txt_password" IsPassword="True" />
+
+        <Button Text="Login" x:Name="btn_login" Clicked="btn_login_Clicked" />
+
+    </StackLayout>
+
+</ContentPage>
