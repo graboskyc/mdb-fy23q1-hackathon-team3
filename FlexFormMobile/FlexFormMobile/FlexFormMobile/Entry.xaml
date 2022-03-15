@@ -6,9 +6,21 @@
              IconImageSource="icon_list.png">
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name="txt_title"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="txt_title" FontSize="36" HorizontalTextAlignment="Center" />
+            <ScrollView>
+
+                <ListView x:Name="lv" ItemSelected="lv_ItemSelected" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
+                                <Label Text="{Binding Question}" FontSize="36"></Label>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

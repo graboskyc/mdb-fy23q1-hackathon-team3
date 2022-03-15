@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Realms;
 using Realms.Sync;
+
 
 namespace FlexFormMobile
 {
@@ -33,6 +34,8 @@ namespace FlexFormMobile
 
                 _f = App.realm_realm.All<Models.FormDefinition>().Where(fd => fd.Id == _id).FirstOrDefault();
 
+                lv.ItemsSource = _f.Questions.ToList();
+
                 txt_title.Text = _f.Title;
 
             }
@@ -42,6 +45,17 @@ namespace FlexFormMobile
 
             }
             base.OnAppearing();
+        }
+
+        private async void lv_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ListView lv = (ListView)sender;
+
+            // this assumes your List is bound to a List<Club>
+            Models.QuestionDefinition q = (Models.QuestionDefinition)lv.SelectedItem;
+
+            // assuiming Club has an Id property
+            await Navigation.PushAsync(new QA(_id, q.Question));
         }
     }
 }

@@ -15,5 +15,28 @@ namespace FlexFormMobile.Models
         [MapTo("title")]
         [Required]
         public string Title { get; set; }
+
+        [MapTo("section")]
+        public IList<QuestionDefinition> Questions { get;  }
+
+
+    }
+
+    class QuestionDefinition : EmbeddedObject
+    {
+        [MapTo("type")]
+        [Required]
+        public string Type { get; set; }
+
+        [MapTo("options")]
+        public string Options { get; set; }
+
+        [MapTo("displayText")]
+        [Required]
+        public string Text { get; set; }
+
+        [MapTo("question")]
+        [Required]
+        public string Question { get; set; }
     }
 }

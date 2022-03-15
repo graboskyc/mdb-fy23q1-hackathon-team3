@@ -81,7 +81,7 @@ namespace FlexFormMobile
                 App.realm_realm = await Realm.GetInstanceAsync(App.realm_config);
 
                 Models.EncodedPhoto ep = new Models.EncodedPhoto();
-                ep.EncodedPhotoText = base64ImageRepresentation;
+                //ep.EncodedPhotoText = base64ImageRepresentation;
 
                 App.realm_realm.Write(() =>
                 {

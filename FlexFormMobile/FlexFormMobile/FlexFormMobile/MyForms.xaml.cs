@@ -29,6 +29,7 @@ namespace FlexFormMobile
                 App.realm_partition = App.realm_user.Id;
                 App.realm_config = new Realms.Sync.SyncConfiguration(App.realm_partition, App.realm_user);
                 App.realm_realm = await Realm.GetInstanceAsync(App.realm_config);
+                await App.realm_realm.GetSession().WaitForDownloadAsync();
                 allForms = App.realm_realm.All<Models.FormDefinition>().OrderBy(i => i.Title);
 
 
