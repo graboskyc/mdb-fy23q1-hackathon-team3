@@ -4,3 +4,6 @@ FlexFormMobile/FlexFormMobile/FlexFormMobile.Android/obj
 FlexFormMobile/FlexFormMobile/FlexFormMobile.Android/bin
 FlexFormMobile/FlexFormMobile/FlexFormMobile/obj
 FlexFormMobile/FlexFormMobile/FlexFormMobile/bin
+.vscode/*
+.browserslistrc
+.editorconfig

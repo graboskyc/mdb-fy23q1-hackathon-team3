@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    Please Login
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                      </form>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-primary" (click)="login()" [disabled]="!loginForm.valid">Login</button>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

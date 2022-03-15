@@ -1,0 +1,53 @@
+{
+"title":"This is a title",
+"author": "Josh",
+"authorId": 1,
+"fields": [
+    {
+        "id": "1",
+        "displayText": "Question 1",
+        "type":"text",
+        "default":"What is your favorite name"
+    },
+    {
+        "id": "2",
+        "displayText": "Question 2",
+        "type":"text",
+        "default":"What is your quest"
+    },
+    {
+        "id": "3",
+        "displayText": "Question 3",
+        "type":"dropdown",
+        "default":"What is your favorite color",
+        "options": [
+            {"key":"blue", "value":"Biue"},
+            {"key":"green", "value":"Green"},
+            {"key":"yellow", "value":"Yellow"},
+            {"key":"Red", "value":"Red"}
+        ]
+    },
+    {
+        "id": "4",
+        "displayText": "Question 4",
+        "type":"checkbox",
+        "default":"What is the airspeed of an unladen swallow",
+        "options": [
+            {"key":"yes", "value":"Yes"},
+            {"key":"no", "value":"No"},
+            {"key":"maybe", "value":"Maybe"}
+        ]
+    },
+    {
+        "id": "5",
+        "displayText": "Question 5",
+        "type":"radio",
+        "options": [
+            {"key":"yes", "value":"Yes"},
+            {"key":"no", "value":"No"},
+            {"key":"maybe", "value":"Maybe"}
+        ]
+    }
+]
+
+}
