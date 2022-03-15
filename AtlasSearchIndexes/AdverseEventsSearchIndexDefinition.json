@@ -1,0 +1,25 @@
+{
+    "analyzer": "lucene.english",
+    "searchAnalyzer": "lucene.english",
+    "mappings": {
+      "dynamic": false,
+      "fields": {
+        "HISTORY": {
+          "type": "string",
+          "analyzer": "lucene.english",
+          "searchAnalyzer": "lucene.english"
+        },
+        "OTHER_MEDS": {
+          "type": "string"
+        },
+        "SYMPTOM_TEXT": {
+          "type": "string",
+          "analyzer": "lucene.english",
+          "searchAnalyzer": "lucene.english"
+        },
+        "ONSET_DATE": {
+          "type": "date"
+        }
+      }
+    }
+  }
