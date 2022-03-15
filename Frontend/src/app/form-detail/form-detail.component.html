@@ -3,10 +3,12 @@
         <div class="col"></div>
         <div class="col-8" *ngIf="formData  as data; else loading">
             <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">{{ formData.title}}</h5>
-                    <form>
-                        <div class="form-floating mb-3" *ngFor="let field of formData.fields">
+                <form>
+                    <div class="card-header">
+                        <h5 class="card-title">{{ formData.title}}</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3" *ngFor="let field of formData.fields">
                             <div *ngIf="field.type == 'text'">
                                 <input type="email" class="form-control" id="{{field.id}}" placeholder="{{field.default}}" name="{{field.id}}" >
                                 <!--<label for="{{field.id}}">{{ field.displayText}}</label>-->
@@ -36,8 +38,11 @@
                                 
                             </div>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="card-footer">
+                        <input class="btn btn-primary" type="submit" name="submit" value="Save Form"/>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="col"></div>

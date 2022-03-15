@@ -8,7 +8,7 @@ import { FormDetailComponent } from './form-detail/form-detail.component';
 import { FormListComponent } from './form-list/form-list.component';
 import { FormsService } from './forms.service';
 import { LoginComponent } from './login/login.component';
-import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule, NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    NgbNavModule
+    NgbNavModule,
+    NgbDropdownModule
   ],
   providers: [FormsService],
   bootstrap: [AppComponent]
