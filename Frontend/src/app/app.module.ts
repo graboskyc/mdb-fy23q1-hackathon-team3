@@ -8,6 +8,7 @@ import { FormDetailComponent } from './form-detail/form-detail.component';
 import { FormListComponent } from './form-list/form-list.component';
 import { FormsService } from './forms.service';
 import { LoginComponent } from './login/login.component';
+import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    NgbNavModule
   ],
   providers: [FormsService],
   bootstrap: [AppComponent]
