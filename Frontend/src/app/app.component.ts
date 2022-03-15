@@ -15,15 +15,9 @@ export class AppComponent implements OnInit {
   constructor(private fb: FormBuilder, private route: Router){}
 
   ngOnInit(): void {
-    this.searchForm = this.fb.group({
-      search: ['', Validators.required]
-    })
+    
   }
 
-  search(){
-    let text = this.searchForm.get('search').value
-    console.log('Trying to redirect');
-    this.route.navigate(['/form-list', {text: text}])
-  }
+  
 
 }

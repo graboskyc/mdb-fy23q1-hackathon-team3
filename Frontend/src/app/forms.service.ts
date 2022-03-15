@@ -33,6 +33,10 @@ app: Realm.App
     return this.app.currentUser.callFunction('form_search', text);
   }
 
+  saveFormData(data: object){
+    return this.app.currentUser.callFunction('form_save', data);
+  }
+
   getFormDefinition(id: string): Promise<FormData> {
     return  this.app.currentUser.callFunction<FormData>('form_get', id);
   }

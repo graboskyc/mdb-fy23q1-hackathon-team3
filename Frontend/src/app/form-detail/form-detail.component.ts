@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { FormsService } from '../forms.service';
 import { FormData } from '../models/form-data.model';
+import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -14,6 +15,7 @@ export class FormDetailComponent implements OnInit {
 
   formData!: Promise<FormData>;
   id: string;
+  faCalendar = faCalendar;
 
   constructor(private service: FormsService, private activatedRoute: ActivatedRoute) {
     
@@ -33,6 +35,17 @@ export class FormDetailComponent implements OnInit {
     this.formData = this.service.getFormDefinition(this.id)
     
   }
+
+  saveForm(data) {
+    // Go over the data and drop any null fields
+    
+    for (const key in data){
+      if (data[key] != "") {
+        let result = {formDefinitionId: this.id, questionId: key, answer: data[key]};
+        this.service.saveFormData(result);
+      }
+    } 
+ }
 
 
 }

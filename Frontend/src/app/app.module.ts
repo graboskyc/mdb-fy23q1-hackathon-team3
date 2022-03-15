@@ -8,7 +8,8 @@ import { FormDetailComponent } from './form-detail/form-detail.component';
 import { FormListComponent } from './form-list/form-list.component';
 import { FormsService } from './forms.service';
 import { LoginComponent } from './login/login.component';
-import { NgbDropdownModule, NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDatepickerModule, NgbDropdownModule, NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { NgbDropdownModule, NgbModule, NgbNavModule } from '@ng-bootstrap/ng-boo
     AppRoutingModule,
     NgbModule,
     NgbNavModule,
-    NgbDropdownModule
+    NgbDropdownModule,
+    NgbDatepickerModule,
+    FontAwesomeModule
   ],
   providers: [FormsService],
   bootstrap: [AppComponent]

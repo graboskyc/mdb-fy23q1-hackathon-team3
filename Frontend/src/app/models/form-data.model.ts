@@ -14,6 +14,7 @@ export interface FormData {
 export interface FieldDetails {
     id: string;
     displayText:string;
+    question: string;
     type: string;
     default?: string;
     options?: string[]
