@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlexFormMobile.Search"
+             Title="Search"
+             IconImageSource="icon_search.png">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="txt_search" Placeholder="Search..." />
+            <Button Clicked="Button_Clicked" Text="Search" />
+
+            <ScrollView>
+                <ListView x:Name="lv" ItemSelected="lv_ItemSelected" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
+                                <Label Text="{Binding title}" FontSize="36"></Label>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
