@@ -11,7 +11,7 @@ MongoMD is a modern tool to assist in modernizing health care and doctor-patient
 
 # Justification
 
-This is based on a real-world opportunity for legacy modernization in US-Central. It continues the work of vertical demos 
+This is based on a real-world opportunity for legacy modernization in US-Central. It continues the work of vertical demos.   Similiar use cases in other verticals have also been noticed in New England / Canada and NY Metro. 
 
 _Please explain why you decided to build the application/demonstration for this project. What inspired you? What problems does it solve or how will it make Presales activities easier?_
 _What MongoDB competitive differentiators (developer productivity, resiliency, scalability, etc.) does this demonstration showcase?_
@@ -28,7 +28,7 @@ _Describe what you application does and how it works_
 * Chris Burch - <what did you contribute>
 * Nick Gogan - AWS Comprehend integration, Search, Enrichment
 * Chris Grabosky - Realm App, Stitch Functions
-* Mike Grayson - Document Model, Automation Scripts
+* Mike Grayson - Document Model, Automation Scripts, Failover Testing
 * Sunny Pandit - <what did you contribute>
 * Josh Smith - Angular Front End
 
@@ -64,6 +64,7 @@ _The demonstration script should provide all the information required for anothe
 * +3 mLocust - generated sample responses with mLocust
 * +3 Cloud Integration - AWS Comprehend Medical integration
 * +3 Cloud Integration - AWS Rekognition DetectText
+* +10 Multi-Region: Business Continuity under a cloud region outage
 
 ## Core Values
 * Build Together - built across the entire US in 2 days 
