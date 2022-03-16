@@ -117,15 +117,31 @@ realm-cli push --local "./Realm-App"
 * Delete Chart Dashboards
 * Delete Cluster
 
+## Demonstration
+When demonstrating 💊 MongoMD 💊  complete the following and add emphasis as outlined below:
 
-_Demonstration script (or link to script) goes here_
-
-_The demonstration script should provide all the information required for another MongoDB SA to deliver your demonstration to a prospect. This should include:_
-
-* _setup/installation steps_
-* _step by step instructions on how to give the demonstration_
-* _key points to emphasize at each point in the demonstration_
-* _any tear down steps required to reset the demonstration so it is ready for the next time_
+* Choose this demo if any of the following RCs are applicable: 
+  * Industry Vertical is health care / medical records
+  * Use case is for dynamic form data
+  * RCs include the flexible data model
+  * RCs include serverless architectures
+  * RCs include Realm Sync
+  * RCs include enrichment / real time event-driven architectures  
+* Begin by explaining what this application is as outlined in the Background so the customer isn't lost
+* Start the demo with the web interface
+  * Highlight this is all done in a serverless architecture and as a result is highly available
+* Walk though the features as outlined in the 3 minute video above
+  * Key features here are RBAC, authentication, and flexible data model
+  * On the search and reporting pages highlight this is using Atlas Search and Charts and that one database is handling both transactional and analytical and Search workloads, increasing developer efficiency 
+* Switch to demonstrating the mobile app as shown in the 3 minute video above
+  * Highlight the power of offline-first 
+  * Highlight sync without developers writing sync protocols 
+  * Highlight serverless scale and shared data with RBAC
+* Show the end-to-end architecture slide 
+  * Highlight high availability
+  * Highlight the developer efficiency of one data platform 
+  * Highlight event-driven architecture with enrichment and data processing 
+  * Highlight integration into native cloud services like Rekognition and Comprehend
 
 # Scoring Rubric Highlights
 ## Mandatory
