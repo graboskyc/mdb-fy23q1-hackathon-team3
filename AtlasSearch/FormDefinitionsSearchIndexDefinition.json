@@ -1,0 +1,25 @@
+{
+    "analyzer": "lucene.english",
+    "searchAnalyzer": "lucene.english",
+    "mappings": {
+      "dynamic": true,
+      "fields": {
+        "formdefintion": {
+          "type": "document",
+          "fields": {
+            "title": [
+              {
+                "type": "string",
+                "analyzer": "lucene.english",
+                "searchAnalyzer": "lucene.english"
+              },
+              {
+                "type": "autocomplete",
+                "minGrams": 4
+              }
+            ]
+          }
+        }
+      }
+    }
+  }

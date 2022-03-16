@@ -5,11 +5,12 @@
              Title="Search"
              IconImageSource="icon_search.png">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout x:Name="sl">
             <Entry x:Name="txt_search" Placeholder="Search..." />
-            <Button Clicked="Button_Clicked" Text="Search" />
+            <Button Clicked="Button_Clicked" Text="Search Forms" />
+            <Button Clicked="Button_Clicked_1"  Text="Search Images" />
 
-            <ScrollView>
+            <ScrollView x:Name="sv">
                 <ListView x:Name="lv" ItemSelected="lv_ItemSelected" HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
