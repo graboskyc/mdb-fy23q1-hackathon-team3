@@ -14,7 +14,7 @@ COLLECTION_NAME="FormDefinition"
 DATABASE="FlexForm"
 INDEX_NAME="FormDefinitionsSearch"
 
-echo Thanks, creating Search Index For $CLUSTER_NAME on the $DATABASE database on the $COLLECTION_NAME collection named $INDEX_NAME
+echo Thanks, creating Search Indexes For $CLUSTER_NAME 
 curl --user "$PUBLIC_KEY:$PRIVATE_KEY" --digest \
      --header "Content-Type: application/json" \
      --include \
@@ -44,6 +44,25 @@ curl --user "$PUBLIC_KEY:$PRIVATE_KEY" --digest \
     }
   },
   "name": "FormSectionSearch"
+}'
+
+curl --user "$PUBLIC_KEY:$PRIVATE_KEY" --digest \
+     --header "Content-Type: application/json" \
+     --include \
+     --request POST "https://cloud.mongodb.com/api/atlas/v1.0/groups/$GROUP_ID/clusters/$CLUSTER_NAME/fts/indexes?pretty=true" \
+     --data '{
+         "collectionName": "EncodedPhoto",
+         "database": "FlexForm",
+           "mappings": {
+    "dynamic": true,
+    "fields": {
+      "rek": {
+        "dynamic": true,
+        "type": "document"
+      }
+    }
+  },
+  "name": "EncodedPhotoSearch"
 }'
 
 curl --user "$PUBLIC_KEY:$PRIVATE_KEY" --digest \
