@@ -1,9 +1,15 @@
 # Details
 
 **Project** : MongoMD's FlexForm - Your EMR system providing digital transformation of paper forms
+
 **Team Number** : 3 
+
 **Team Name** : 💊 MongoMD 💊  
-**Demonstration Video** : _Insert link to demonstration video_  
+
+**Demonstration Video** : Available [here](https://youtu.be/iyHmzw-9q3E)
+
+**Screenshot Deck**: Available [here](https://docs.google.com/presentation/d/1cBWPuhfAlomNBgNbKmXRzULkHmc9Fo-jiJVM987-B6Q/edit?usp=sharing)
+
 
 # Overview
 
@@ -12,7 +18,6 @@ MongoMD is a modern tool to assist in modernizing health care and doctor-patient
 # Justification
 
 The inspiration of this app is from a real-world opportunity for legacy modernization in US-Central. It continues the work of vertical demos. Similar use cases in other verticals have also been noticed in New England / Canada and NY Metro.
-
 
 This helps improve solutions consulting activities since it provides another vertical-focused end-to-end demo that solves real-world "what about" scenarios. For example, providing a web based computer interface is great, but the next question is often a followup of "my volunteers are in the field with bad internet access... what can you do for them" or after presenting the form discovery customers may ask "how can I find the data and responses once I have a large data set" or "how can I present data back out visually" or even "how can I correlate this data with other data sets" - here we have an end-to-end demo to showcase these scenarios.
 
@@ -27,6 +32,7 @@ Once a form is created, it can be answered by doctors, nurses, or other field pe
 Additionally, if a form needed to be done with paper, the form can be captured with the mobile app's camera and uploaded when cell signal is available. This is then analyzed for OCR.
 
 ## How it works
+
 ![](Screenshots/Architecture.png)
 
 * Built on MongoDB Atlas 5.0
