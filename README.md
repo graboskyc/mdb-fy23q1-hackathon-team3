@@ -94,6 +94,15 @@ Cluster0
 ### Additional Prep
 * Add Realm Email/Password Users
 
+### Import Realm App
+
+* Using the realm-cli you will need to import the Realm App
+
+```bash 
+realm-cli push --local "./Realm-App"
+```
+
+
 ### Web Frontend
 * See walkthrough [here](Frontend/README.md)
 
