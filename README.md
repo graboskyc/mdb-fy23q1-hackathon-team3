@@ -52,7 +52,8 @@ Additionally, if a form needed to be done with paper, the form can be captured w
 
 ## Setup
 ### Atlas Setup
-* TK
+* Deploy an Atlas cluster (M10 minimum)
+* Create a Realm App
 
 ### Sample Data and Indexes
 * TK
