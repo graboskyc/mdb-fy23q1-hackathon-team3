@@ -34,6 +34,31 @@ _Describe what you application does and how it works_
 
 # Demonstration Script
 
+## Setup
+### Atlas Setup
+* TK
+
+### Sample Data and Indexes
+* TK
+
+### Charts
+* TK
+
+### Additional Prep
+* Add Realm Email/Password Users
+
+### Web Frontend
+* See walkthrough [here](Frontend/README.md)
+
+### Mobile
+* See walkthrough [here](FlexFormMobile/README.md)
+
+### Teardown
+* Delete Realm app
+* Delete Chart Dashboards
+* Delete Cluster
+
+
 _Demonstration script (or link to script) goes here_
 
 _The demonstration script should provide all the information required for another MongoDB SA to deliver your demonstration to a prospect. This should include:_
