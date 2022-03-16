@@ -93,3 +93,5 @@ Originally intended to mimic the types of forms that a clinician might complete 
 ![](../Screenshots/web_response.gif)
 
 ![](../Screenshots/web_search.gif)
+
+![](../Screenshots/web_charts.gif)
