@@ -1,1 +1,73 @@
-<p>reporting works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-2">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Data Attributes</h5>                    
+                </div>
+                <div class="card-body">
+                    <ng-container *ngFor="let facet of facets | async">
+                        <h6> {{ facet.count.total }} Total Results</h6>
+                        <br/>
+                        <h5>Conditions</h5>
+                        <ul class="list-group">
+                            <li *ngFor="let bucket of facet.facet.Condition.buckets" class="list-group-item">
+                                <span>{{ bucket._id }}  
+                                    <span class="badge rounded-pill bg-success">{{ bucket.count }}</span>
+                                </span>
+                            </li>
+                        </ul>
+                        <hr/>
+                        <h5>Procedures</h5>
+                        <ul class="list-group">
+                            <li *ngFor="let bucket of facet.facet.Procedure.buckets" class="list-group-item">
+                                <span>{{ bucket._id }}  
+                                    <span class="badge rounded-pill bg-success">{{ bucket.count }}</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="card">
+                <div class="card-header">
+                    <form class="d-flex" [formGroup]="searchForm" (ngSubmit)="search()">
+                        <input class="form-control me-2" type="search" placeholder="Search responses" aria-label="Search" formControlName="search">
+                        <button class="btn btn-outline-success" type="submit" (click)="search()">Search</button>
+                      </form>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Symptoms</th>
+                                <th scope="col">Patient Age</th>
+                                <th scope="col">State</th>
+                                <th scope="col">Gender</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="responses | async; else loading">
+                            <tr *ngFor="let response of responses | async">
+                                <td>{{ response.SYMPTOM_TEXT}}</td>
+                                <td>{{ response.AGE_YRS}}</td>
+                                <td>{{ response.STATE}}</td>
+                                <td>{{ response.SEX}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer">
+                </div>
+            </div>
+        </div>
+    <div class="col"></div>
+</div>
+
+<ng-template #loading>
+    <tbody>
+        Response data is loading. Please be patient. 
+    </tbody>
+</ng-template>
