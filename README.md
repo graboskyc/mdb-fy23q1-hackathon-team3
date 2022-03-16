@@ -17,10 +17,26 @@ _Please explain why you decided to build the application/demonstration for this 
 _What MongoDB competitive differentiators (developer productivity, resiliency, scalability, etc.) does this demonstration showcase?_
 
 # Detailed Application Overview
+## What it does
+This is meant to reduce the amount of paper in doctors offices, insurance companies, or even in the field. As a result, forms can be built dynamically, similar to Microsoft Infopath or Google Forms. Data types can be things like open text fields, checkboxes, drop down lists, etc. This is done via a modern Angular web app.
 
-_Describe the architecture of your application and include a diagram._
-_List all the MongoDB components/products used in your demonstration._
-_Describe what you application does and how it works_
+Once a form is created, it can be answered by doctors, nurses, or other field personnel in that web app or on a mobile Android device which is critically important for areas with bad cell reception.
+
+Additionally, if a form needed to be done with paper, the form can be captured with the mobile app's camera and uploaded when cell signal is available. This is then analyzed for OCR.
+
+## How it works
+![](Screenshots/Architecture.png)
+
+* Built on MongoDB Atlas 5.0
+* All application logic is stored in Realm App Services functions
+* The Web UI is hosted on Realm Static Hosting and written in Angular and calls those functions
+* Those functions do basic CRUD as well as Search operations
+* An Android app written using Realm Sync and the C#/Xamarin Forms SDK
+* CRUD operations are done offline-first with Realm Mobile 
+* Search operations call Realm Functions to execute the same Search functions as the Angular app
+* The Android app can upload a base64 encoded image of paper forms
+* Upon upload, Realm Triggers fire to have AWS Rekognition do TextDetect on the form
+* MongoDB Charts can graph results and form data
 
 
 # Roles and Responsibilities
