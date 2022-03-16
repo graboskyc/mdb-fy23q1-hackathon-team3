@@ -1,0 +1,13 @@
+{
+    "analyzer": "lucene.english",
+    "searchAnalyzer": "lucene.english",
+    "mappings": {
+      "dynamic": false,
+      "fields": {
+        "OTHER_MEDS": {
+          "minGrams": 3,
+          "type": "autocomplete"
+        }
+      }
+    }
+  }
