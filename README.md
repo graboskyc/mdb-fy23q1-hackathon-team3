@@ -13,8 +13,9 @@ MongoMD is a modern tool to assist in modernizing health care and doctor-patient
 
 The inspiration of this app is from a real-world opportunity for legacy modernization in US-Central. It continues the work of vertical demos. Similar use cases in other verticals have also been noticed in New England / Canada and NY Metro.
 
-_Please explain why you decided to build the application/demonstration for this project. What inspired you? What problems does it solve or how will it make Presales activities easier?_
-_What MongoDB competitive differentiators (developer productivity, resiliency, scalability, etc.) does this demonstration showcase?_
+This helps improve Presales activities since it provides another vertical-focused end-to-end demo that solves real-world "what about" scenarios. For example, providing a web based computer interface is great, but the next question is often a followup of "my volunteers are in the field with bad internet access... what can you do for them" or after presenting the form discovery customers may ask "how can I find the data and responses once I have a large data set" or "how can I present data back out visually" or even "how can I correlate this data with other data sets" - here we have an end-to-end demo to showcase these scenarios.
+
+In the end, it is all about demonstrating developer efficiency and MongoDB's tooling and flexible data model. After all, a multi-platform app was written from the ground up in two days. That is a perfect embodiment of increasing of developer efficiency.
 
 # Detailed Application Overview
 ## What it does
@@ -41,8 +42,8 @@ Additionally, if a form needed to be done with paper, the form can be captured w
 
 # Roles and Responsibilities
 
-* Nick Gogan - AWS Comprehend integration, Search, Enrichment
-* Chris Grabosky - Realm App, Stitch Functions
+* Nick Gogan - AWS Comprehend integration, Search, Enrichment, Charts
+* Chris Grabosky - Realm App, Realm App Services Functions, Rekognition
 * Mike Grayson - Document Model, Automation Scripts, Failover Testing
 * Josh Smith - Angular Front End
 
