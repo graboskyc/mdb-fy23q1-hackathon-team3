@@ -8,7 +8,7 @@ import { FormDetailComponent } from './form-detail/form-detail.component';
 import { FormListComponent } from './form-list/form-list.component';
 import { FormsService } from './forms.service';
 import { LoginComponent } from './login/login.component';
-import { NgbDatepickerModule, NgbDropdownModule, NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordionModule, NgbDatepickerModule, NgbDropdownModule, NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReportingComponent } from './reporting/reporting.component';
 import { FormGeneratorComponent } from './form-generator/form-generator.component';
@@ -32,7 +32,8 @@ import { FormGeneratorComponent } from './form-generator/form-generator.componen
     NgbNavModule,
     NgbDropdownModule,
     NgbDatepickerModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbAccordionModule
   ],
   providers: [FormsService],
   bootstrap: [AppComponent]
