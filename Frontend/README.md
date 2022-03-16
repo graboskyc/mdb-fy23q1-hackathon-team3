@@ -1,27 +1,87 @@
-# Flexform
+# MongoMD - Web
+__Demonstrates the flexible schema attributes of MongoDB through the user defined forms in an Angular app runnign on Realm Web Services to simplify code and improve the developer experience.__
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
+__SA Maintainer__: [Josh Smith](mailto:josh.smith@mongodb.com)
 
-## Development server
+__Time to setup__: 30 mins
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+__Time to execute__: 15 mins
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Description
 
-## Build
+This proof demonstrates how to use Realm Web Services and the Realm Web SDK. It also demonstrates the power of the document data model by supporting a set of user defined forms and their associated data points. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Originally intended to mimic the types of forms that a clinician might complete when a patient comes to a medical office for a visit, MongoMD allows for a rich set of fields to be defined via a JSON payload. Those are then rendered into a set of forms for the user to complete.  Those results are then searchable using Atlas Search and the facets associated. 
 
-## Running unit tests
+---
+## Setup
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+1. Configure Atlas Environment
+  Configuration of the Atlas Environment can be found here [Test Readme](../README.md)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Configure Laptop
 
-## Further help
+    The MongoMD frontend is built using Angular and works best with the Angular CLI. Current versions of the app are running 
+    * Angular 13.2.6
+    * Typescript 4.5.2
+  
+    Recommend installing these tools via [homebrew](https://brew.sh/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    ```
+    brew install angular-cli
+    ```
+
+    If you have not already, clone the GIT repo found @ [mdb-fy23q1-hackathon-team3](https://github.com/graboskyc/mdb-fy23q1-hackathon-team3)
+    
+    ```
+    git clone git@github.com:graboskyc/mdb-fy23q1-hackathon-team3.git
+    ```
+
+    Then navigate into the ``` Frontend ``` directory and execute ng build to create the necessary dependencies and download the needed npm packages
+
+    ```
+    cd Frontend
+    ng build
+
+    ```
+
+3. Configure the App
+
+    MongoMD needs to know the appId for your Realm application (setup in the earlier README). To configure MongoMD, you need to replace the place holder with your app key in the ``` src > environments ``` folder
+
+    ```
+    cd src/environments
+
+    ```
+
+    environment.ts & environment.prod.ts
+
+    ```
+    export const environment = {
+    production: false,
+    app_id: '<REPLACE ME>'
+    };
+
+    ```
+    with 
+    ```
+    export const environment = {
+    production: false,
+    app_id: '<YOUR APP ID>'
+    };
+
+    ```
+
+
+4. Running the App
+
+    To start the app, you use the ``` ng serve ``` command to have angular-cli start up the server and run the code. By default the app will run @ http://localhost:4200
+
+
+
+
+
+

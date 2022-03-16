@@ -13,7 +13,7 @@ import { FormData } from './models/form-data.model';
 export class FormsService {
 
 formData: FormData;
-APP_ID = 'flexform-ggkwy';
+APP_ID = environment.app_id;
 graphqlUrl = `https://realm.mongodb.com/api/client/v2.0/app/${this.APP_ID}/graphql`;
 
 // Connect to your MongoDB Realm app
