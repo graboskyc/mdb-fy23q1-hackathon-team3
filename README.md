@@ -41,11 +41,9 @@ Additionally, if a form needed to be done with paper, the form can be captured w
 
 # Roles and Responsibilities
 
-* Chris Burch - <what did you contribute>
 * Nick Gogan - AWS Comprehend integration, Search, Enrichment
 * Chris Grabosky - Realm App, Stitch Functions
 * Mike Grayson - Document Model, Automation Scripts, Failover Testing
-* Sunny Pandit - <what did you contribute>
 * Josh Smith - Angular Front End
 
 # Demonstration Script
@@ -90,8 +88,6 @@ Cluster0
 ### Charts
 * TK
 
-### Additional Prep
-* Add Realm Email/Password Users
 
 ### Import Realm App
 
@@ -101,6 +97,8 @@ Cluster0
 realm-cli push --local "./Realm-App"
 ```
 
+### Additional Prep
+* Add yourself a Realm user using Email/Password authentication
 
 ### Web Frontend
 * See walkthrough [here](Frontend/README.md)
