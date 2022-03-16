@@ -7,14 +7,16 @@
 
 # Overview
 
-MongoMD is a modern tool to assist in modernizing health care and doctor-patient relationships. Using MongoDB, it provides a flexible data model to enter health surveys and other background information into either a web-based application or a mobile application (Android). This is automatically reported on and searchable. Additionally within the mobile application paper forms can be scanned and uploaded which is then OCR/Analyzed. Lastly, data can be cross-referenced with medical databases for reliability.
+MongoMD is a modern tool to assist in modernizing health care and doctor-patient relationships. Using MongoDB, it provides a flexible data model to enter health surveys and other background information into either a web-based application or a mobile application (Android). This is automatically reported on and searchable all within one transactional database. Additionally within the mobile application paper forms can be scanned and uploaded which is then OCR/Analyzed. Lastly, data can be cross-referenced with medical databases for reliability.
 
 # Justification
 
-This is based on a real-world opportunity for legacy modernization in US-Central. It continues the work of vertical demos.   Similiar use cases in other verticals have also been noticed in New England / Canada and NY Metro. 
+The inspiration of this app is from a real-world opportunity for legacy modernization in US-Central. It continues the work of vertical demos. Similar use cases in other verticals have also been noticed in New England / Canada and NY Metro.
 
-_Please explain why you decided to build the application/demonstration for this project. What inspired you? What problems does it solve or how will it make Presales activities easier?_
-_What MongoDB competitive differentiators (developer productivity, resiliency, scalability, etc.) does this demonstration showcase?_
+
+This helps improve solutions consulting activities since it provides another vertical-focused end-to-end demo that solves real-world "what about" scenarios. For example, providing a web based computer interface is great, but the next question is often a followup of "my volunteers are in the field with bad internet access... what can you do for them" or after presenting the form discovery customers may ask "how can I find the data and responses once I have a large data set" or "how can I present data back out visually" or even "how can I correlate this data with other data sets" - here we have an end-to-end demo to showcase these scenarios.
+
+In the end, it is all about demonstrating developer efficiency and MongoDB's tooling and flexible data model. After all, a multi-platform app was written from the ground up in two days. That is a perfect embodiment of increasing of developer efficiency.
 
 # Detailed Application Overview
 ## What it does
@@ -41,27 +43,68 @@ Additionally, if a form needed to be done with paper, the form can be captured w
 
 # Roles and Responsibilities
 
-* Chris Burch - <what did you contribute>
-* Nick Gogan - AWS Comprehend integration, Search, Enrichment
-* Chris Grabosky - Realm App, Stitch Functions
+* Nick Gogan - AWS Comprehend integration, Search, Enrichment, Charts
+* Chris Grabosky - Realm App, Realm App Services Functions, Rekognition
 * Mike Grayson - Document Model, Automation Scripts, Failover Testing
-* Sunny Pandit - <what did you contribute>
 * Josh Smith - Angular Front End
 
 # Demonstration Script
 
 ## Setup
+
+### Laptop Setup
+* Ensure Realm CLI is [installed](https://docs.mongodb.com/realm/deploy/realm-cli-reference/#installation), e.g.:
+
+```bash
+npm install -g mongodb-realm-cli
+```
+* Pull this repository
+  
 ### Atlas Setup
-* TK
+* Deploy an Atlas cluster (M10 minimum)
+* Create a Realm App
 
 ### Sample Data and Indexes
-* TK
+* Navigate to the setup folder in the pulled repository and run mongorestore to load the sample data.
+
+```bash 
+tar xvf sample_data.tar.gz  
+mongorestore --uri=<connectionString for your Atlas Cluster> dump/
+```
+
+* After successfully loading the Sample Data, now we can create the Search Indexes, we'll need some information that the script asks for to be able to interact with the Atlas Search API to create the indexes.
+
+```bash 
+./create_indexes.sh
+What is your Atlas API Public Key?
+<Your Public Key>
+What is your Atlas API Private Key?
+<Your Private Key>
+What is your Atlas PROJECT_ID?
+<Project_ID>
+What is your Atlas Cluster name?
+Cluster0
+```
+
+* This should create 3 Search indexes that will help support the different search portions of the application.
 
 ### Charts
 * TK
 
+
+### Import Realm App
+
+* Using the realm-cli you will need to import the Realm App
+
+```bash 
+realm-cli push --local "./Realm-App"
+```
+
 ### Additional Prep
-* Add Realm Email/Password Users
+* Add yourself a Realm user using Email/Password authentication
+
+### Optional Prep
+* mLocust integration was done. The locust file can be found [here](mLocust/locustfile-faker.py)
 
 ### Web Frontend
 * See walkthrough [here](Frontend/README.md)
@@ -97,6 +140,7 @@ _The demonstration script should provide all the information required for anothe
 ## Bonus Points
 * +3 - Real opportunity related
 * +5 WOW - OCR upload of hand-written forms which is then searchable
+* +5 WOW - That mad nice search / facet / charts page
 * +2 RC - "Flexible Data Model is an excellent fit for this use case since Forms data can have multiple questions and each have a response"
 * +2 RC - "Doctors offices do not always have the best internet connectivity, especially in rural and remote areas so offline-first applications are critical"
 * +2 RC - "I want to be able to search and find my results and forms easily" 
@@ -108,6 +152,6 @@ _The demonstration script should provide all the information required for anothe
 * +10 Multi-Region: Business Continuity under a cloud region outage
 
 ## Core Values
-* Build Together - built across the entire US in 2 days 
+* Build Together - built across the entire US in 2 days by only 4 people
 * Make It Matter - this sort of data entry is a problem in rural and remote areas
 * Be Intellectually Honest - we thought we would have gotten more done :( 

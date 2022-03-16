@@ -49,6 +49,15 @@ app: Realm.App
     return  this.app.currentUser.callFunction<FormData>('form_get', id);
   }
 
+  responseSearch(text?: string): Promise<any[]> {
+    return this.app.currentUser.callFunction('search_fulltext', text);
+  }
+
+  facetSearch(text?: string): Promise<any[]> {
+    return this.app.currentUser.callFunction('search_facets', text);
+  }
+
+
 
   loginUser(email: string, password: string): any {
     let credentials = Realm.Credentials.emailPassword(email, password);

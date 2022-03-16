@@ -1,1 +1,127 @@
-<p>reporting works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-2">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Data Attributes</h5>                    
+                </div>
+                <div class="card-body">
+                    <ng-container *ngFor="let facet of facets | async">
+                        <!--<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+                            <ngb-panel title="Conditions">
+                                <ng-template ngbPanelContent>
+                                    <ul class="list-group">
+                                        <li *ngFor="let bucket of facet.facet.Condition.buckets" class="list-group-item">
+                                            <span>{{ bucket._id }}  
+                                                <span class="badge rounded-pill bg-success">{{ bucket.count }}</span>
+                                            </span>
+                                        </li>
+                                    </ul>        
+                                </ng-template>
+                            </ngb-panel>
+                            <ngb-panel title="Procedures">
+                                <ul class="list-group">
+                                    <li *ngFor="let bucket of facet.facet.Procedures.buckets" class="list-group-item">
+                                        <span>{{ bucket._id }}  
+                                            <span class="badge rounded-pill bg-success">{{ bucket.count }}</span>
+                                        </span>
+                                    </li>
+                                </ul>        
+                            </ngb-panel>
+                        </ngb-accordion>-->
+                        <h5>Conditions</h5>
+                        <ul class="list-group">
+                            <li *ngFor="let bucket of facet.facet.Condition.buckets" class="list-group-item">
+                                <span>{{ bucket._id }}  
+                                    <span class="badge rounded-pill bg-success">{{ bucket.count }}</span>
+                                </span>
+                            </li>
+                        </ul>
+                        <hr/>
+                        <h5>Procedures</h5>
+                        <ul class="list-group">
+                            <li *ngFor="let bucket of facet.facet.Procedure.buckets" class="list-group-item">
+                                <span>{{ bucket._id }}  
+                                    <span class="badge rounded-pill bg-success">{{ bucket.count }}</span>
+                                </span>
+                            </li>
+                        </ul>
+                        <hr/>
+                        <h5>Anatomy</h5>
+                        <ul class="list-group">
+                            <li *ngFor="let bucket of facet.facet.Anatomy.buckets" class="list-group-item">
+                                <span>{{ bucket._id }}  
+                                    <span class="badge rounded-pill bg-success">{{ bucket.count }}</span>
+                                </span>
+                            </li>
+                        </ul>
+                        <hr/>
+                        <h5>Medication</h5>
+                        <ul class="list-group">
+                            <li *ngFor="let bucket of facet.facet.Medication.buckets" class="list-group-item">
+                                <span>{{ bucket._id }}  
+                                    <span class="badge rounded-pill bg-success">{{ bucket.count }}</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="card">
+                <div class="card-header">
+                    <form class="d-flex" [formGroup]="searchForm" (ngSubmit)="search()">
+                        <input class="form-control me-2" type="search" placeholder="Search responses" aria-label="Search" formControlName="search">
+                        <button class="btn btn-outline-success" type="submit" (click)="search()">Search</button>
+                      </form>
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="325" height="200" src="https://charts.mongodb.com/charts-hackathonteam3-jdgpi/embed/charts?id=6231f8ad-0cf8-489f-8214-369e3241facc&maxDataAge=3600&theme=light&autoRefresh=true"></iframe>
+                            </div>
+                            <div class="col">
+                                <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="325" height="200" src="https://charts.mongodb.com/charts-hackathonteam3-jdgpi/embed/charts?id=6231f8f8-aa9e-47d7-8e48-1abd291f1226&maxDataAge=3600&theme=light&autoRefresh=true"></iframe>
+                            </div>
+                            <div class="col">
+                                <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="325" height="200" src="https://charts.mongodb.com/charts-hackathonteam3-jdgpi/embed/charts?id=6231f92e-2652-487f-8914-48957296ef3f&maxDataAge=3600&theme=light&autoRefresh=true"></iframe>
+                            </div>
+                            <div class="col">
+                                <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="325" height="200" src="https://charts.mongodb.com/charts-hackathonteam3-jdgpi/embed/charts?id=6231f970-111d-4e64-841e-72bd02ecf933&maxDataAge=3600&theme=light&autoRefresh=true"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Symptoms</th>
+                                <th scope="col">Patient Age</th>
+                                <th scope="col">State</th>
+                                <th scope="col">Gender</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="responses | async; else loading">
+                            <tr *ngFor="let response of responses | async">
+                                <td>{{ response.SYMPTOM_TEXT}}</td>
+                                <td>{{ response.AGE_YRS}}</td>
+                                <td>{{ response.STATE}}</td>
+                                <td>{{ response.SEX}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer">
+                </div>
+            </div>
+        </div>
+    <div class="col"></div>
+</div>
+
+<ng-template #loading>
+    <tbody>
+        Response data is loading. Please be patient. 
+    </tbody>
+</ng-template>

@@ -85,3 +85,13 @@ Originally intended to mimic the types of forms that a clinician might complete 
 
 
 
+## Screenshots
+![](../Screenshots/web_login.gif)
+
+![](../Screenshots/web_newform.gif)
+
+![](../Screenshots/web_response.gif)
+
+![](../Screenshots/web_search.gif)
+
+![](../Screenshots/web_charts.gif)

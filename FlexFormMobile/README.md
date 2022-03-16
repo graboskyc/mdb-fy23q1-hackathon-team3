@@ -28,3 +28,9 @@ __Time to execute__: 15 mins
 ![](../Screenshots/mobile_form.gif)
 
 ![](../Screenshots/mobile_search.gif)
+
+![](../Screenshots/mobile_airplane.gif)
+
+![](../Screenshots/mobile_upload.gif)
+
+![](../Screenshots/mobile_egon.gif)
