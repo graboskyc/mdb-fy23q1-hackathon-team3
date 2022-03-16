@@ -10,13 +10,17 @@ import { FormsService } from './forms.service';
 import { LoginComponent } from './login/login.component';
 import { NgbDatepickerModule, NgbDropdownModule, NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ReportingComponent } from './reporting/reporting.component';
+import { FormGeneratorComponent } from './form-generator/form-generator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormDetailComponent,
     FormListComponent,
-    LoginComponent
+    LoginComponent,
+    ReportingComponent,
+    FormGeneratorComponent
   ],
   imports: [
     ReactiveFormsModule,

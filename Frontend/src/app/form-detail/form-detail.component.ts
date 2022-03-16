@@ -41,7 +41,7 @@ export class FormDetailComponent implements OnInit {
     
     for (const key in data){
       if (data[key] != "") {
-        let result = {formDefinitionId: this.id, questionId: key, answer: data[key]};
+        let result = {formDefinitionId: this.id, answer: data[key], _pk: this.service.app.currentUser.id};
         this.service.saveFormData(result);
       }
     } 
