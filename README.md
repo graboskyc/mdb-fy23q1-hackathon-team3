@@ -7,11 +7,11 @@
 
 # Overview
 
-MongoMD is a modern tool to assist in modernizing health care and doctor-patient relationships. Using MongoDB, it provides a flexible data model to enter health surveys and other background information into either a web-based application or a mobile application (Android). This is automatically reported on and searchable. Additionally within the mobile application paper forms can be scanned and uploaded which is then OCR/Analyzed. Lastly, data can be cross-referenced with medical databases for reliability.
+MongoMD is a modern tool to assist in modernizing health care and doctor-patient relationships. Using MongoDB, it provides a flexible data model to enter health surveys and other background information into either a web-based application or a mobile application (Android). This is automatically reported on and searchable all within one transactional database. Additionally within the mobile application paper forms can be scanned and uploaded which is then OCR/Analyzed. Lastly, data can be cross-referenced with medical databases for reliability.
 
 # Justification
 
-This is based on a real-world opportunity for legacy modernization in US-Central. It continues the work of vertical demos.   Similiar use cases in other verticals have also been noticed in New England / Canada and NY Metro. 
+The inspiration of this app is from a real-world opportunity for legacy modernization in US-Central. It continues the work of vertical demos. Similar use cases in other verticals have also been noticed in New England / Canada and NY Metro.
 
 _Please explain why you decided to build the application/demonstration for this project. What inspired you? What problems does it solve or how will it make Presales activities easier?_
 _What MongoDB competitive differentiators (developer productivity, resiliency, scalability, etc.) does this demonstration showcase?_
@@ -61,9 +61,8 @@ npm install -g mongodb-realm-cli
 * Pull this repository
   
 ### Atlas Setup
-* Log-on to your [Atlas account](http://cloud.mongodb.com) (using the MongoDB SA preallocated Atlas credits system) and navigate to your SA project
-
-* Create a replica set __M10__  tier deployment in a AWS region - __Realm Sync requires MongoDB version 4.4 or above__  Name the cluster __Cluster0__ (this is required for the import of the Realm application - alternatively update the cluster name in the Realm config file to your cluster name.)
+* Deploy an Atlas cluster (M10 minimum)
+* Create a Realm App
 
 ### Sample Data and Indexes
 * Navigate to the setup folder in the pulled repository and run mongorestore to load the sample data.
