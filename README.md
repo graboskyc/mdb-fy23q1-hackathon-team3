@@ -7,11 +7,11 @@
 
 # Overview
 
-MongoMD is a modern tool to assist in modernizing health care and doctor-patient relationships. Using MongoDB, it provides a flexible data model to enter health surveys and other background information into either a web-based application or a mobile application (Android). This is automatically reported on and searchable. Additionally within the mobile application paper forms can be scanned and uploaded which is then OCR/Analyzed. Lastly, data can be cross-referenced with medical databases for reliability.
+MongoMD is a modern tool to assist in modernizing health care and doctor-patient relationships. Using MongoDB, it provides a flexible data model to enter health surveys and other background information into either a web-based application or a mobile application (Android). This is automatically reported on and searchable all within one transactional database. Additionally within the mobile application paper forms can be scanned and uploaded which is then OCR/Analyzed. Lastly, data can be cross-referenced with medical databases for reliability.
 
 # Justification
 
-This is based on a real-world opportunity for legacy modernization in US-Central. It continues the work of vertical demos.   Similiar use cases in other verticals have also been noticed in New England / Canada and NY Metro. 
+The inspiration of this app is from a real-world opportunity for legacy modernization in US-Central. It continues the work of vertical demos. Similar use cases in other verticals have also been noticed in New England / Canada and NY Metro.
 
 _Please explain why you decided to build the application/demonstration for this project. What inspired you? What problems does it solve or how will it make Presales activities easier?_
 _What MongoDB competitive differentiators (developer productivity, resiliency, scalability, etc.) does this demonstration showcase?_
@@ -51,17 +51,56 @@ Additionally, if a form needed to be done with paper, the form can be captured w
 # Demonstration Script
 
 ## Setup
+
+### Laptop Setup
+* Ensure Realm CLI is [installed](https://docs.mongodb.com/realm/deploy/realm-cli-reference/#installation), e.g.:
+
+```bash
+npm install -g mongodb-realm-cli
+```
+* Pull this repository
+  
 ### Atlas Setup
-* TK
+* Deploy an Atlas cluster (M10 minimum)
+* Create a Realm App
 
 ### Sample Data and Indexes
-* TK
+* Navigate to the setup folder in the pulled repository and run mongorestore to load the sample data.
+
+```bash 
+mongorestore --uri=<connectionString for your Atlas Cluster> dump/
+```
+
+* After successfully loading the Sample Data, now we can create the Search Indexes, we'll need some information that the script asks for to be able to interact with the Atlas Search API to create the indexes.
+
+```bash 
+./create_indexes.sh
+What is your Atlas API Public Key?
+<Your Public Key>
+What is your Atlas API Private Key?
+<Your Private Key>
+What is your Atlas PROJECT_ID?
+<Project_ID>
+What is your Atlas Cluster name?
+Cluster0
+```
+
+* This should create 3 Search indexes that will help support the different search portions of the application.
 
 ### Charts
 * TK
 
 ### Additional Prep
 * Add Realm Email/Password Users
+
+### Import Realm App
+
+* Using the realm-cli you will need to import the Realm App
+
+```bash 
+realm-cli push --local "./Realm-App"
+```
+
 
 ### Web Frontend
 * See walkthrough [here](Frontend/README.md)
