@@ -8,6 +8,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Realms;
 using Realms.Sync;
+using System.IO;
+using MongoDB.Bson;
 
 namespace FlexFormMobile
 {
@@ -57,6 +59,30 @@ namespace FlexFormMobile
                 await DisplayAlert("Error Fetching Search Results", ex.Message, "OK");
 
             }
+            sv.IsVisible = true;
+        }
+
+        private async void Button_Clicked_1(object sender, EventArgs e)
+        {
+            App.realm_partition = App.realm_user.Id;
+            App.realm_config = new Realms.Sync.SyncConfiguration(App.realm_partition, App.realm_user);
+            App.realm_realm = await Realm.GetInstanceAsync(App.realm_config);
+
+            List<Models.SearchResult> sr = await App.realm_user.Functions.CallAsync<List<Models.SearchResult>>("upload_search", txt_search.Text);
+
+            //ObjectId id = ObjectId.Parse(sr.FirstOrDefault()._id);
+
+            Models.EncodedPhoto ep = App.realm_realm.All<Models.EncodedPhoto>().Where(p => p.Id == sr.FirstOrDefault()._id).FirstOrDefault();
+
+
+            Image i = new Image();
+            Label l = new Label();
+            sv.IsVisible = false;
+            l.Text = ep.EncodedPhotoText;
+            byte[] Base64Stream = Convert.FromBase64String(ep.EncodedPhotoText);
+            i.Source = ImageSource.FromStream(() => new MemoryStream(Base64Stream));
+            sl.Children.Add(i);
+            //sl.Children.Add(l);
         }
     }
 }

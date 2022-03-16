@@ -70,7 +70,7 @@ namespace FlexFormMobile
 
             byte[] imageArray = System.IO.File.ReadAllBytes(newFile);
             string base64ImageRepresentation = Convert.ToBase64String(imageArray);
-            txt_Encoded.Text = base64ImageRepresentation;
+            //txt_Encoded.Text = base64ImageRepresentation;
 
             progressbar.Progress = .5;
 
@@ -81,7 +81,7 @@ namespace FlexFormMobile
                 App.realm_realm = await Realm.GetInstanceAsync(App.realm_config);
 
                 Models.EncodedPhoto ep = new Models.EncodedPhoto();
-                //ep.EncodedPhotoText = base64ImageRepresentation;
+                ep.EncodedPhotoText = base64ImageRepresentation;
 
                 App.realm_realm.Write(() =>
                 {
