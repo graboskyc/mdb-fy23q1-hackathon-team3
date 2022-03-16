@@ -68,6 +68,7 @@ npm install -g mongodb-realm-cli
 * Navigate to the setup folder in the pulled repository and run mongorestore to load the sample data.
 
 ```bash 
+tar xvf sample_data.tar.gz  
 mongorestore --uri=<connectionString for your Atlas Cluster> dump/
 ```
 
