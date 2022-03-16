@@ -51,11 +51,42 @@ Additionally, if a form needed to be done with paper, the form can be captured w
 # Demonstration Script
 
 ## Setup
+
+### Laptop Setup
+* Ensure Realm CLI is [installed](https://docs.mongodb.com/realm/deploy/realm-cli-reference/#installation), e.g.:
+
+```bash
+npm install -g mongodb-realm-cli
+```
+* Pull this repository
+  
 ### Atlas Setup
-* TK
+* Log-on to your [Atlas account](http://cloud.mongodb.com) (using the MongoDB SA preallocated Atlas credits system) and navigate to your SA project
+
+* Create a replica set __M10__  tier deployment in a AWS region - __Realm Sync requires MongoDB version 4.4 or above__  Name the cluster __Cluster0__ (this is required for the import of the Realm application - alternatively update the cluster name in the Realm config file to your cluster name.)
 
 ### Sample Data and Indexes
-* TK
+* Navigate to the setup folder in the pulled repository and run mongorestore to load the sample data.
+
+```bash 
+mongorestore --uri=<connectionString for your Atlas Cluster> dump/
+```
+
+* After successfully loading the Sample Data, now we can create the Search Indexes, we'll need some information that the script asks for to be able to interact with the Atlas Search API to create the indexes.
+
+```bash 
+./create_indexes.sh
+What is your Atlas API Public Key?
+<Your Public Key>
+What is your Atlas API Private Key?
+<Your Private Key>
+What is your Atlas PROJECT_ID?
+<Project_ID>
+What is your Atlas Cluster name?
+Cluster0
+```
+
+* This should create 3 Search indexes that will help support the different search portions of the application.
 
 ### Charts
 * TK
