@@ -1,0 +1,6 @@
+{
+    "name": "aws",
+    "actions": [
+        "rekognition:*"
+    ]
+}

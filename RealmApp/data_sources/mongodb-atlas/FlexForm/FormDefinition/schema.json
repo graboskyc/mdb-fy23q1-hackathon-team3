@@ -1,0 +1,46 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "_pk": {
+            "bsonType": "string"
+        },
+        "section": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "displayText": {
+                        "bsonType": "string"
+                    },
+                    "options": {
+                        "bsonType": "string"
+                    },
+                    "question": {
+                        "bsonType": "string"
+                    },
+                    "type": {
+                        "bsonType": "string"
+                    }
+                },
+                "required": [
+                    "type",
+                    "displayText",
+                    "question"
+                ],
+                "title": "QuestionDefinition"
+            }
+        },
+        "title": {
+            "bsonType": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "_pk",
+        "title"
+    ],
+    "title": "FormDefinition"
+}

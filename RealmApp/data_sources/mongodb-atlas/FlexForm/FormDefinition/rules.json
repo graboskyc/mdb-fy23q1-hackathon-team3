@@ -1,0 +1,18 @@
+{
+    "collection": "FormDefinition",
+    "database": "FlexForm",
+    "roles": [
+        {
+            "name": "owner",
+            "apply_when": {
+                "_pk": "%%user.id"
+            },
+            "read": true,
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {}
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "62309e465885918f3558a5d7",
+    "name": "onNewImageUpload",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "INSERT"
+        ],
+        "database": "FlexForm",
+        "collection": "EncodedPhoto",
+        "service_name": "mongodb-atlas",
+        "match": {},
+        "project": {},
+        "full_document": true,
+        "full_document_before_change": false,
+        "unordered": true
+    },
+    "disabled": false,
+    "event_processors": {
+        "FUNCTION": {
+            "config": {
+                "function_name": "onNewImageOldWay"
+            }
+        }
+    }
+}

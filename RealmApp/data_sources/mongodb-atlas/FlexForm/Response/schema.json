@@ -1,0 +1,24 @@
+{
+    "bsonType": "object",
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "_pk": {
+            "bsonType": "string"
+        },
+        "answer": {
+            "bsonType": "string"
+        },
+        "formDefinitionId": {
+            "bsonType": "objectId"
+        }
+    },
+    "required": [
+        "_id",
+        "_pk",
+        "formDefinitionId",
+        "answer"
+    ],
+    "title": "Response"
+}

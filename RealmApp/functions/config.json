@@ -2,5 +2,57 @@
     {
         "name": "passwordReset",
         "private": true
+    },
+    {
+        "name": "form_get",
+        "private": false
+    },
+    {
+        "name": "form_new",
+        "private": false
+    },
+    {
+        "name": "form_save",
+        "private": false
+    },
+    {
+        "name": "form_search",
+        "private": false
+    },
+    {
+        "name": "onNewImage",
+        "private": true
+    },
+    {
+        "name": "form_all",
+        "private": false
+    },
+    {
+        "name": "aws_medicalNER",
+        "private": false
+    },
+    {
+        "name": "enrichDocsWithNer",
+        "private": false
+    },
+    {
+        "name": "onNewImageOldWay",
+        "private": true
+    },
+    {
+        "name": "response_new",
+        "private": false
+    },
+    {
+        "name": "upload_search",
+        "private": false
+    },
+    {
+        "name": "search_facets",
+        "private": false
+    },
+    {
+        "name": "search_fulltext",
+        "private": false
     }
 ]

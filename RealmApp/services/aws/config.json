@@ -1,0 +1,11 @@
+{
+    "name": "aws",
+    "type": "aws",
+    "config": {
+        "accessKeyId": "AKIA6IESFAOZ7SKRWI43"
+    },
+    "secret_config": {
+        "secretAccessKey": "awsCreds"
+    },
+    "version": 1
+}
