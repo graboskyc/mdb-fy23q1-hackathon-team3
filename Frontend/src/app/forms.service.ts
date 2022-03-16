@@ -6,6 +6,9 @@ import * as Realm from "realm-web";
 
 import { FormData } from './models/form-data.model';
 
+const {
+  BSON: { ObjectId },
+} = Realm;
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +37,7 @@ app: Realm.App
   }
 
   saveFormData(data: object){
-    return this.app.currentUser.callFunction('form_save', data);
+    return this.app.currentUser.callFunction('response_new', data);
   }
 
   getFormDefinition(id: string): Promise<FormData> {

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  formDataUrl: './data/form-data-example.json'
+  app_id: 'flexform-ggkwy'
 };
 
 /*

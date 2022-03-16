@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col"></div>
-        <div class="col-8" *ngIf="formData | async  as data; else loading">
+        <div class="col-md-8 col-sm-10" *ngIf="formData | async  as data; else loading">
             <div class="card">
                 <form #medForm = "ngForm" (ngSubmit) = "saveForm(medForm.value)" >
                     <div class="card-header">
@@ -62,4 +62,10 @@
     </div>
 </div>
 
-<ng-template #loading>Form data is loading. Please be patient</ng-template>
+<ng-template #loading>
+    <div class="card">
+        <div class="card-body">
+            Form data is loading. Please be patient. 
+        </div>
+    </div>
+</ng-template>

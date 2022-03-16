@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-sm-10 col-md-8">
+            <div class="card">
+                <div clas="card-header">
+                    <h5 class="card-title">Create New Form</h5>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="createForm" (ngSubmit)="saveForm()">
+                        <div class="form mb-3">
+                            <label for="floatingInput" for="title">Form Title </label>
+                            <input type="text" class="form-control" id="title" placeholder="Example Form" formControlName="title">
+                        </div>
+                        <hr/>
+                        <h5>Questions</h5>
+                        <div formArrayName="section">
+                            <div *ngFor="let question of section().controls; index as i">
+                                <div [formGroupName]="i" class="row">
+                                    <div class="form col">
+                                        <label for="floatingInput" for="question">Question </label>
+                                        <input type="text" class="form-control" id="question" placeholder="Question text goes here" formControlName="question">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form col-sm-6">
+                                        <label for="floatingInput" for="type">Type </label>
+                                        <select class="form-control" formControlName="type" id="type">
+                                            <option value="">Choose Question Type</option>
+                                            <option value="text">Text</option>
+                                            <option value="CB">Checkboxes</option>
+                                            <option value="date">Date</option>
+                                            <option value="text-field">Text Field</option>
+                                            <option value="DDL">Dropdown list</option>
+                                        </select>
+                                    </div>
+                                    <div class="form col-sm-6">
+                                        <label for="floatingInput" for="displayText">Display Text </label>
+                                        <input type="text" class="form-control" id="displayText" placeholder="Question text goes here" formControlName="displayText">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form mb-3">
+                                        <label for="floatingInput" for="queoptionsstion">Options </label>
+                                        <input type="text" class="form-control" id="options" placeholder="Question text goes here" formControlName="options">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-success" (click)="saveForm()" [disabled]="!createForm.valid">Create New Form</button>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
