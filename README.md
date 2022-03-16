@@ -46,7 +46,9 @@ Additionally, if a form needed to be done with paper, the form can be captured w
 * The Android app can upload a base64 encoded image of paper forms
 * Upon upload, Realm Triggers fire to have AWS Rekognition do TextDetect on the form
 * MongoDB Charts can graph results and form data
-
+* To simulate the experience with a lot of data in it, an adverse events dataset was uploaded into the SearchContent.VAERS2022 namespace.
+* A trigger was created for this collection such that, upon document inserts, a function is called to send pieces of the document to AWS Comprehend Medical for named entity recognition. 
+  * The entities being captured are: ANATOMY, MEDICATION, MEDICAL_CONDITION, TREATMENT_NAME, and TEST_TREATMENT_PROCEDURE.
 
 # Roles and Responsibilities
 
@@ -94,11 +96,12 @@ Cluster0
 ```
 
 * This should create 3 Search indexes that will help support the different search portions of the application.
-
 ### Charts
-* TK
-
-
+* In Charts, hit the arrow next to "Add Dashboard" and select "Import Dashboard".
+* Select the "Facets.charts" file from the Charts folder.
+* For the data source, select "SearchContent.VAERS2022".
+* Hit Save.
+  
 ### Import Realm App
 
 * Using the realm-cli you will need to import the Realm App

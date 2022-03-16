@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  app_id: 'flexform-ggkwy'
+  app_id: '<REPLACE ME>'
 };
 
 /*
