@@ -102,6 +102,9 @@ realm-cli push --local "./Realm-App"
 ### Additional Prep
 * Add yourself a Realm user using Email/Password authentication
 
+### Optional Prep
+* mLocust integration was done. The locust file can be found [here](mLocust/locustfile-faker.py)
+
 ### Web Frontend
 * See walkthrough [here](Frontend/README.md)
 
