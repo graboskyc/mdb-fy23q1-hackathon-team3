@@ -139,6 +139,7 @@ _The demonstration script should provide all the information required for anothe
 ## Bonus Points
 * +3 - Real opportunity related
 * +5 WOW - OCR upload of hand-written forms which is then searchable
+* +5 WOW - That mad nice search / facet / charts page
 * +2 RC - "Flexible Data Model is an excellent fit for this use case since Forms data can have multiple questions and each have a response"
 * +2 RC - "Doctors offices do not always have the best internet connectivity, especially in rural and remote areas so offline-first applications are critical"
 * +2 RC - "I want to be able to search and find my results and forms easily" 
@@ -150,6 +151,6 @@ _The demonstration script should provide all the information required for anothe
 * +10 Multi-Region: Business Continuity under a cloud region outage
 
 ## Core Values
-* Build Together - built across the entire US in 2 days 
+* Build Together - built across the entire US in 2 days by only 4 people
 * Make It Matter - this sort of data entry is a problem in rural and remote areas
 * Be Intellectually Honest - we thought we would have gotten more done :( 
