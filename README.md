@@ -1,20 +1,26 @@
 # Details
 
 **Project** : MongoMD's FlexForm - Your EMR system providing digital transformation of paper forms
+
 **Team Number** : 3 
+
 **Team Name** : 💊 MongoMD 💊  
-**Demonstration Video** : _Insert link to demonstration video_  
+
+**Demonstration Video** : Available [here](https://youtu.be/iyHmzw-9q3E)
+
+**Screenshot Deck**: Available [here](https://docs.google.com/presentation/d/1cBWPuhfAlomNBgNbKmXRzULkHmc9Fo-jiJVM987-B6Q/edit?usp=sharing)
+
 
 # Overview
 
 MongoMD is a modern tool to assist in modernizing health care and doctor-patient relationships. Using MongoDB, it provides a flexible data model to enter health surveys and other background information into either a web-based application or a mobile application (Android). This is automatically reported on and searchable all within one transactional database. Additionally within the mobile application paper forms can be scanned and uploaded which is then OCR/Analyzed. Lastly, data can be cross-referenced with medical databases for reliability.
 
+
 # Justification
 
 The inspiration of this app is from a real-world opportunity for legacy modernization in US-Central. It continues the work of vertical demos. Similar use cases in other verticals have also been noticed in New England / Canada and NY Metro.
 
-
-This helps improve Presales activities since it provides another vertical-focused end-to-end demo that solves real-world "what about" scenarios. For example, providing a web based computer interface is great, but the next question is often a followup of "my volunteers are in the field with bad internet access... what can you do for them" or after presenting the form discovery customers may ask "how can I find the data and responses once I have a large data set" or "how can I present data back out visually" or even "how can I correlate this data with other data sets" - here we have an end-to-end demo to showcase these scenarios.
+This helps improve solutions consulting activities since it provides another vertical-focused end-to-end demo that solves real-world "what about" scenarios. For example, providing a web based computer interface is great, but the next question is often a followup of "my volunteers are in the field with bad internet access... what can you do for them" or after presenting the form discovery customers may ask "how can I find the data and responses once I have a large data set" or "how can I present data back out visually" or even "how can I correlate this data with other data sets" - here we have an end-to-end demo to showcase these scenarios.
 
 In the end, it is all about demonstrating developer efficiency and MongoDB's tooling and flexible data model. After all, a multi-platform app was written from the ground up in two days. That is a perfect embodiment of increasing of developer efficiency.
 
@@ -27,6 +33,7 @@ Once a form is created, it can be answered by doctors, nurses, or other field pe
 Additionally, if a form needed to be done with paper, the form can be captured with the mobile app's camera and uploaded when cell signal is available. This is then analyzed for OCR.
 
 ## How it works
+
 ![](Screenshots/Architecture.png)
 
 * Built on MongoDB Atlas 5.0
@@ -39,7 +46,9 @@ Additionally, if a form needed to be done with paper, the form can be captured w
 * The Android app can upload a base64 encoded image of paper forms
 * Upon upload, Realm Triggers fire to have AWS Rekognition do TextDetect on the form
 * MongoDB Charts can graph results and form data
-
+* To simulate the experience with a lot of data in it, an adverse events dataset was uploaded into the SearchContent.VAERS2022 namespace.
+* A trigger was created for this collection such that, upon document inserts, a function is called to send pieces of the document to AWS Comprehend Medical for named entity recognition. 
+  * The entities being captured are: ANATOMY, MEDICATION, MEDICAL_CONDITION, TREATMENT_NAME, and TEST_TREATMENT_PROCEDURE.
 
 # Roles and Responsibilities
 
@@ -87,11 +96,12 @@ Cluster0
 ```
 
 * This should create 3 Search indexes that will help support the different search portions of the application.
-
 ### Charts
-* TK
-
-
+* In Charts, hit the arrow next to "Add Dashboard" and select "Import Dashboard".
+* Select the "Facets.charts" file from the Charts folder.
+* For the data source, select "SearchContent.VAERS2022".
+* Hit Save.
+  
 ### Import Realm App
 
 * Using the realm-cli you will need to import the Realm App
@@ -117,20 +127,36 @@ realm-cli push --local "./Realm-App"
 * Delete Chart Dashboards
 * Delete Cluster
 
+## Demonstration
+When demonstrating 💊 MongoMD 💊  complete the following and add emphasis as outlined below:
 
-_Demonstration script (or link to script) goes here_
-
-_The demonstration script should provide all the information required for another MongoDB SA to deliver your demonstration to a prospect. This should include:_
-
-* _setup/installation steps_
-* _step by step instructions on how to give the demonstration_
-* _key points to emphasize at each point in the demonstration_
-* _any tear down steps required to reset the demonstration so it is ready for the next time_
+* Choose this demo if any of the following RCs are applicable: 
+  * Industry Vertical is health care / medical records
+  * Use case is for dynamic form data
+  * RCs include the flexible data model
+  * RCs include serverless architectures
+  * RCs include Realm Sync
+  * RCs include enrichment / real time event-driven architectures  
+* Begin by explaining what this application is as outlined in the Background so the customer isn't lost
+* Start the demo with the web interface
+  * Highlight this is all done in a serverless architecture and as a result is highly available
+* Walk though the features as outlined in the 3 minute video above
+  * Key features here are RBAC, authentication, and flexible data model
+  * On the search and reporting pages highlight this is using Atlas Search and Charts and that one database is handling both transactional and analytical and Search workloads, increasing developer efficiency 
+* Switch to demonstrating the mobile app as shown in the 3 minute video above
+  * Highlight the power of offline-first 
+  * Highlight sync without developers writing sync protocols 
+  * Highlight serverless scale and shared data with RBAC
+* Show the end-to-end architecture slide 
+  * Highlight high availability
+  * Highlight the developer efficiency of one data platform 
+  * Highlight event-driven architecture with enrichment and data processing 
+  * Highlight integration into native cloud services like Rekognition and Comprehend
 
 # Scoring Rubric Highlights
 ## Mandatory
 * MongoDB version 5.0
-* Atlas Search (autocomplete index)
+* Atlas Search indexes (3)
 
 ## Optional
 * Realm Sync

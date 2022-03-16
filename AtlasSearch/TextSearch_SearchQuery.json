@@ -1,14 +1,9 @@
 {
-    "$search": {
-        "index": "default",
-        "count": { "type": "total" },
-        "text": {
-            "path": ["HISTORY", "LAB_DATA", "ONSET_DATE", "OTHER_MEDS", "SYMPTOM_TEXT"],
-            "query": query,
-            "fuzzy": {
-                "maxEdits": 1,
-                "maxExpansions": 100
-            }
-        }
+  "$search": {
+    "index": "autocomplete",
+    "autocomplete": {
+      "query": "asp",
+      "path": "OTHER_MEDS"
     }
+  }
 }
