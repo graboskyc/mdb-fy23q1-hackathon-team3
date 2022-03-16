@@ -13,8 +13,7 @@ MongoMD is a modern tool to assist in modernizing health care and doctor-patient
 
 The inspiration of this app is from a real-world opportunity for legacy modernization in US-Central. It continues the work of vertical demos. Similar use cases in other verticals have also been noticed in New England / Canada and NY Metro.
 
-_Please explain why you decided to build the application/demonstration for this project. What inspired you? What problems does it solve or how will it make Presales activities easier?_
-_What MongoDB competitive differentiators (developer productivity, resiliency, scalability, etc.) does this demonstration showcase?_
+Reporting across large sets of data, even fairly structured data, is a challenge. Healtcare data can be even more so. due to the large number of fields, the assortment of large text blocks. and the custommization that happens across different health care facilities.  MongoMD demonstrates the power of the MongoDB document-style data model and the Lucene powered search capabilities of Atlas Search to show how large data sets can be quickly mined and searched to identify potential issues that can improve patient care. These types of reports are what drive the health care business, and having a more real-world demo can be very impactful. 
 
 # Detailed Application Overview
 ## What it does
