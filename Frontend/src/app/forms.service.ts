@@ -36,6 +36,11 @@ app: Realm.App
     return this.app.currentUser.callFunction('form_search', text);
   }
 
+  createForm(data: object) {
+    data['_pk'] = this.app.currentUser.id;
+    return this.app.currentUser.callFunction('form_new', data);
+  }
+
   saveFormData(data: object){
     return this.app.currentUser.callFunction('response_new', data);
   }

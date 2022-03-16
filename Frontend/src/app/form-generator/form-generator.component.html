@@ -7,45 +7,53 @@
                     <h5 class="card-title">Create New Form</h5>
                 </div>
                 <div class="card-body">
-                    <form [formGroup]="createForm" (ngSubmit)="saveForm()">
+                    <form [formGroup]="createForm">
                         <div class="form mb-3">
                             <label for="floatingInput" for="title">Form Title </label>
                             <input type="text" class="form-control" id="title" placeholder="Example Form" formControlName="title">
                         </div>
-                        <hr/>
                         <h5>Questions</h5>
-                        <div formArrayName="section">
-                            <div *ngFor="let question of section().controls; index as i">
-                                <div [formGroupName]="i" class="row">
-                                    <div class="form col">
-                                        <label for="floatingInput" for="question">Question </label>
-                                        <input type="text" class="form-control" id="question" placeholder="Question text goes here" formControlName="question">
+                        <hr/>
+                        <br/>
+                        <ng-container formArrayName="section">
+                            <div *ngFor="let item of section.controls; index as i">
+                                <ng-container [formGroupName]="i">
+                                    <div class="row">
+                                        <h5>Question {{i+1}}</h5>
+                                        <div class="form col">
+                                            <label for="floatingInput" for="question">Question </label>
+                                            <input type="text" class="form-control" id="question" placeholder="Question text goes here" formControlName="question">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form col-sm-6">
-                                        <label for="floatingInput" for="type">Type </label>
-                                        <select class="form-control" formControlName="type" id="type">
-                                            <option value="">Choose Question Type</option>
-                                            <option value="text">Text</option>
-                                            <option value="CB">Checkboxes</option>
-                                            <option value="date">Date</option>
-                                            <option value="text-field">Text Field</option>
-                                            <option value="DDL">Dropdown list</option>
-                                        </select>
+                                    <div class="row">
+                                        <div class="form col-sm-6">
+                                            <label for="floatingInput" for="type">Type </label>
+                                            <select class="form-control" formControlName="type" id="type">
+                                                <option value="">Choose Question Type</option>
+                                                <option value="text">Text</option>
+                                                <option value="CB">Checkboxes</option>
+                                                <option value="date">Date</option>
+                                                <option value="text-field">Text Field</option>
+                                                <option value="DDL">Dropdown list</option>
+                                            </select>
+                                        </div>
+                                        <div class="form col-sm-6">
+                                            <label for="floatingInput" for="displayText">Display Text </label>
+                                            <input type="text" class="form-control" id="displayText" placeholder="Question text goes here" formControlName="displayText">
+                                        </div>
                                     </div>
-                                    <div class="form col-sm-6">
-                                        <label for="floatingInput" for="displayText">Display Text </label>
-                                        <input type="text" class="form-control" id="displayText" placeholder="Question text goes here" formControlName="displayText">
+                                    <div class="row">
+                                        <div class="form mb-3">
+                                            <label for="floatingInput" for="options">Options </label>
+                                            <input type="text" class="form-control" id="options" placeholder="Question text goes here" formControlName="options">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form mb-3">
-                                        <label for="floatingInput" for="queoptionsstion">Options </label>
-                                        <input type="text" class="form-control" id="options" placeholder="Question text goes here" formControlName="options">
-                                    </div>
-                                </div>
+                                </ng-container>
+                            <hr/>
                             </div>
+                        </ng-container>
+                        <div class="form mb-3">
+                            <button class="btn btn-secondary align-right" (click)="addQuestion()">Add Question</button>
                         </div>
                     </form>
                 </div>

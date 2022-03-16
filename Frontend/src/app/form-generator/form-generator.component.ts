@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FormsService } from '../forms.service';
 
 @Component({
   selector: 'app-form-generator',
@@ -9,25 +11,23 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormGeneratorComponent implements OnInit {
 
   createForm: FormGroup;
+  section: FormArray;
 
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private service: FormsService, private route: Router) { }
 
   ngOnInit(): void {
 
+    this.section = new FormArray([this.newQuestion()]);
+
     this.createForm = this.fb.group({
       title: ['', Validators.required],
-      section: this.fb.array([this.newQuestion()])
+      section: this.section
     })
-
   }
 
   addQuestion(): void {
-    this.section().push(this.newQuestion());
-  }
-
-  section(): FormArray {
-    return this.createForm.get('section') as FormArray;
+    this.section.push(this.newQuestion());
   }
 
   newQuestion(): FormGroup {
@@ -39,8 +39,9 @@ export class FormGeneratorComponent implements OnInit {
     })
   }
 
-  saveForm(): void {
-
+  saveForm() {
+    this.service.createForm(this.createForm.value);
+    this.route.navigate(['/form-list']);
   }
 
 }
