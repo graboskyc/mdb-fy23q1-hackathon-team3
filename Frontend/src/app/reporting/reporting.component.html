@@ -8,8 +8,6 @@
                 </div>
                 <div class="card-body">
                     <ng-container *ngFor="let facet of facets | async">
-                        <h6> {{ facet.count.total }} Total Results</h6>
-                        <br/>
                         <h5>Conditions</h5>
                         <ul class="list-group">
                             <li *ngFor="let bucket of facet.facet.Condition.buckets" class="list-group-item">
